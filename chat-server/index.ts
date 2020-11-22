@@ -1,11 +1,12 @@
 import { serve } from 'https://deno.land/std/http/server.ts';
 import {
-  acceptWebSocket
+  acceptWebSocket,
 } from 'https://deno.land/std/ws/mod.ts';
 import HttpCode from './constants/HttpCode.ts';
-import { handle } from './SocketHandler.ts';
+import { handle } from './handler.ts';
 
 const s = serve({ port: 8000 });
+
 for await (const req of s) {
   const { conn, r: bufReader, w: bufWriter, headers } = req;
   acceptWebSocket({
