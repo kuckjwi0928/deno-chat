@@ -12,8 +12,7 @@ export async function handle(ws: WebSocket) {
   for await (const ev of ws) {
     if (ws.isClosed) {
       connectedSockets.splice(connectedSockets.findIndex((_ws) => _ws === ws), 1);
-    }
-    if (typeof ev === 'string') {
+    } else if (typeof ev === 'string') {
       // broadcast
       for (const connectedSocket of connectedSockets) {
         connectedSocket.send(ev);
