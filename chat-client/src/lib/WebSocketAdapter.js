@@ -26,6 +26,6 @@ export default class WebSocketAdapter {
 
   disconnect() {
     this.ws.close()
-    this.status = _WS_STATUS.CONNECTED
+    this.status = _WS_STATUS.CLOSED
   }
 }
