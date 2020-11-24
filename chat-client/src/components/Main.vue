@@ -1,24 +1,35 @@
 <template>
-  <div>
-    <div>
-      <label>
-        <input type="text" :placeholder="$t('input_nick_name')" ref="nickName" />
-      </label>
+  <div class="md-layout md-alignment-center">
+    <div class="md-layout-item">
+      <md-field>
+        <label>{{ $t('nick_name') }}</label>
+        <md-input ref="nickName"></md-input>
+      </md-field>
+      <md-button class="md-raised md-primary" @click="join">{{ $t('start_chat') }}</md-button>
     </div>
-    <button @click="join">{{ $t('start_chat') }}</button>
   </div>
 </template>
 
 <script>
+import { CHAT_ROOM } from '@/constants/route';
+
 export default {
   name: 'Main',
   methods: {
     join: function() {
-      if (!this.$refs.nickName.value) {
-        this.$refs.nickName.focus()
+      const el = this.$refs.nickName.$el;
+      if (!el.value) {
+        el.focus()
+        return
       }
-      // TODO(kuckjwi): join chat room
+      this.$router.push(CHAT_ROOM);
     }
   }
 }
 </script>
+
+<style lang="scss" scoped>
+.md-layout {
+  flex-direction: column;
+}
+</style>
