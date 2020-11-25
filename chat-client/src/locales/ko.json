@@ -1,5 +1,6 @@
 {
   "start_chat": "채팅 시작!",
   "nick_name": "닉네임",
-  "input_nick_name": "닉네임을 입력해 주세요."
+  "input_nick_name": "닉네임을 입력해 주세요.",
+  "join_chat_room": "%s 님이 입장하셨습니다."
 }

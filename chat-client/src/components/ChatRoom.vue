@@ -1,12 +1,23 @@
 <template>
   <div>
-    <md-content>ChatRoom</md-content>
+    <md-content>{{ nickName }}</md-content>
+    <div v-for="(chat, index) in chats" :key="index">{{ chat }}</div>
   </div>
 </template>
 
 <script>
 export default {
-  name: "ChatRoom"
+  name: "ChatRoom",
+  props: {
+    nickName: {
+      required: true,
+      type: String,
+    },
+    chats: {
+      required: true,
+      type: Array,
+    }
+  },
 }
 </script>
 

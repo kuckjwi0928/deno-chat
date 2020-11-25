@@ -23,6 +23,7 @@ export default {
         return
       }
       this.$router.push(CHAT_ROOM);
+      this.$store.dispatch('setNickName', {nickName: el.value})
     }
   }
 }
