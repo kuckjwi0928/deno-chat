@@ -2,5 +2,10 @@
   "start_chat": "Start Chat!",
   "nick_name": "NickName",
   "input_nick_name": "Input your nickname",
-  "join_chat_room": "%s joined the chat room"
+  "join_chat_room": "%s joined the chat room",
+  "leave_chat_room": "%s left the chat room",
+  "your_nick_name": "Your nickname is ",
+  "input_message": "Enter message",
+  "send": "send",
+  "chat_room": "ChatRoom"
 }

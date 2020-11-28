@@ -15,6 +15,9 @@ export default new Vuex.Store({
     mutateChats: (state, chat) => {
       state.chats.push(chat)
     },
+    clearChats: (state) => {
+      state.chats = []
+    }
   },
   actions: {
     setNickName: ({ commit }, { nickName }) => {
@@ -23,6 +26,12 @@ export default new Vuex.Store({
     addChats: ({ commit }, { chat }) => {
       commit('mutateChats', chat)
     },
+    clearChats: ({ commit }) => {
+      return new Promise((resolve) => {
+        commit('clearChats')
+        resolve()
+      })
+    }
   },
   getters: {
     getNickName: state => (state.nickName),
