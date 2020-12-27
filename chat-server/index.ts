@@ -12,7 +12,7 @@ for await (const req of s) {
   const { conn, r: bufReader, w: bufWriter, headers } = req;
   if (headers.get("upgrade") !== 'websocket') {
     const file = req.url === '/' ? '/index.html' : req.url;
-    req.respond({body: await Deno.readFile(`${path.resolve('../')}/chat-client/dist${file}`)});
+    req.respond({body: await Deno.readFile(`${path.resolve(path.fromFileUrl(import.meta.url), '../', '../')}/chat-client/dist${file}`)});
   } else {
     acceptWebSocket({
       conn,
